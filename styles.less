@@ -41,7 +41,31 @@ atom-text-editor {
   .syntax--storage,
   .syntax--type .syntax--function {
     font-size: 1.8em;
+    color: white;
+    text-shadow: 1px 1px 0px #FC2B2B;
   }
+
+  .syntax--keyword.syntax--control.syntax--export.syntax--ts {
+    font-size: 1em;
+    letter-spacing: 3px;
+    color: #b18bb1;
+  }
+
+  .syntax--keyword.syntax--control.syntax--export.syntax--ts:after {
+      // background-image: url('http://vignette2.wikia.nocookie.net/thefakegees/images/6/61/Nyan_Cat_Emoticon.gif/revision/latest?cb=20130117231130');
+      background-image: url('https://s-media-cache-ak0.pinimg.com/originals/7e/1f/59/7e1f59824f6c0e7c34815d340b538646.gif');
+      background-size: 30px 23px;
+      display: inline-block;
+      width: 30px;
+      height: 23px;
+      content:"";
+      line-height: 2em;
+      vertical-align: middle;
+      margin-left: 0px;
+      margin-right: -5px;
+      text-indent: -9999px;
+  }
+
   .syntax--punctuation.syntax--definition.syntax--entity.syntax--css,
   .syntax--arrow.syntax--js {
     font-family: @fontFamily;
