@@ -1,0 +1,65 @@
+@syntax-accent:     hsl(342, 100%, 68%);
+@hue-5:             hsl(342, 74%, 69%);
+@highlight:         hsla(@syntax-hue, 50%, 40%, 0.4);
+@syntax-hue:        218;
+@syntax-saturation: 35%;
+@fontFamily:        "Inconsolata";
+@fontFamily2:       "flottflott";
+@fontSize:          15.5px;
+@fontWeight:        400;
+
+atom-text-editor {
+  font-weight: @fontWeight;
+  font-size:   @fontSize;
+}
+.tree-view .project-root > .list-tree {
+  margin-left: -10px;
+}
+[with-minimap]:not(.is-focused) .cursor {
+  opacity: 0.8 !important;
+  border:  1px solid @syntax-accent !important;
+}
+atom-text-editor {
+  .is-focused .cursor {
+      opacity: 1 !important;
+  }
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--html,
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-element.syntax--css,
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class.syntax--css,
+  .syntax--source.syntax--js.syntax--jsx > .syntax--keyword.syntax--control.syntax--flow.syntax--js,
+  .syntax--storage,
+  .syntax--type .syntax--function {
+    padding-right:  1px;
+    font-family:    @fontFamily2;
+    font-size:      1.44em;
+    line-height:    1rem;
+    font-weight:    400;
+    vertical-align: baseline;
+    height:         inherit;
+  }
+  .syntax--source.syntax--js.syntax--jsx > .syntax--keyword.syntax--control.syntax--flow.syntax--js,
+  .syntax--storage,
+  .syntax--type .syntax--function {
+    font-size: 1.8em;
+  }
+  .syntax--punctuation.syntax--definition.syntax--entity.syntax--css,
+  .syntax--arrow.syntax--js {
+    font-family: @fontFamily;
+    font-size:   @fontSize;
+    font-weight: @fontWeight;
+  }
+  .highlight-selected .region {
+    border:        none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid @syntax-accent !important;
+  }
+  atom-text-editor-minimap .minimap-visible-area::after {
+    background-color: hsla(@syntax-hue, @syntax-saturation, 50%, 0.15);
+  }
+}
+.minimap .cursor-line {
+  background: hsla(@syntax-hue, 60%, 70%, 0.5);
+}
+.linter-highlight.status-success {
+  color: #20b684;
+}
